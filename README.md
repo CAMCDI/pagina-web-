@@ -1,6 +1,6 @@
 Aquí tienes el código para copiar y pegar directamente en tu archivo `README.md`:
 
-```markdown
+markdown
 # Proyecto Web
 
 Este es un proyecto web que incluye una estructura básica de HTML, CSS y JavaScript. El proyecto está compuesto por varias páginas y recursos, que incluyen una página principal (`index.html`), una página de productos, hojas de estilo CSS, archivos de JavaScript y una carpeta con imágenes.
@@ -9,7 +9,6 @@ Este es un proyecto web que incluye una estructura básica de HTML, CSS y JavaSc
 
 El proyecto está organizado de la siguiente manera:
 
-```
 /project-root
 │
 ├── /css
@@ -24,7 +23,6 @@ El proyecto está organizado de la siguiente manera:
 ├── index.html            # Página principal
 ├── productos.html        # Página de productos
 └── README.md             # Este archivo
-```
 
 ## Descripción de los Archivos
 
@@ -38,7 +36,7 @@ El proyecto está organizado de la siguiente manera:
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   git clone https://github.com/CAMCDI/pagina-web-.git
    ```
    
 2. Navega al directorio del proyecto:

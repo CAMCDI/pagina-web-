@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Ropa</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="top-left">
+      <div class="dropdown">
+        <button class="dropbtn">≡ Categorías</button>
+        <div class="dropdown-content">
+          <a href="#">Hombres</a>
+          <div class="dropdown-subcontent">
+            <a href="#">Camisetas</a>
+            <a href="#">Pantalones</a>
+            <a href="#">Zapatos</a>
+          </div>
+          <a href="#">Mujeres</a>
+          <div class="dropdown-subcontent">
+            <a href="#">Tops</a>
+            <a href="#">Faldas</a>
+            <a href="#">Zapatos</a>
+          </div>
+          <a href="#">Niños</a>
+          <div class="dropdown-subcontent">
+            <a href="#">Camisetas</a>
+            <a href="#">Pantalones</a>
+            <a href="#">Juguetes</a>
+          </div>
+          <a href="#">Accesorios</a>
+          <div class="dropdown-subcontent">
+            <a href="#">Bolsos</a>
+            <a href="#">Gafas</a>
+            <a href="#">Sombreros</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Nombre de la tienda -->
+
+    <div class="top-right">
+      <div class="login-container">
+        <button class="login-btn">Login</button>
+      </div>
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Buscar...">
+        <button class="search-btn"><i class="fa fa-search"></i>🔍</button>
+      
+      
+      </div>
+      <!-- Carrito de compras -->
+      <button class="cart-btn">🛒</button>
+      
+      <button class="contact-btn">Contáctanos</button>
+        
+    </div>
+  </div>
+
+  <h1>JACDAGA</h1>
+
+ <!-- Carrusel de imágenes centrado -->
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="slide">
+      <img src="imagenes/imagen2.png" alt="Imagen 1">
+    </div>
+    <div class="slide">
+      <img src="imagenes/imagen2.png" alt="Imagen 2">
+    </div>
+    <div class="slide">
+      <img src="imagenes/imagen3.png" alt="Imagen 1">
+    </div>
+       <div class="slide">
+      <img src="imagenes/imagen5.png" alt="Imagen 3">
+    </div>
+  </div>
+</div>
+
+<!-- Sección de categorías (6x2) -->
+<div class="categories">
+  <div class="category" onclick="showCategoryProducts('hombres')"><img src="imagenes/hombres.png" alt="Hombres"></div>
+  <div class="category" onclick="showCategoryProducts('mujeres')"><img src="imagenes/mujer.png" alt="Mujeres"></div>
+  <div class="category" onclick="showCategoryProducts('ninos')"><img src="imagenes/ninos.png" alt="Niños"></div>
+  <div class="category" onclick="showCategoryProducts('accesorios')"><img src="imagenes/accesorios.png" alt="Accesorios"></div>
+  <div class="category" onclick="showCategoryProducts('tops')"><img src="imagenes/tops.png" alt="Tops"></div>
+  <div class="category" onclick="showCategoryProducts('vestidos')"><img src="imagenes/vestidos.png" alt="Vesatidos"></div>
+  <div class="category" onclick="showCategoryProducts('lenceria')"><img src="imagenes/lenceria.png" alt="Lenceria"></div>
+  <div class="category" onclick="showCategoryProducts('curvy')"><img src="imagenes/curvy.png" alt="Curvy"></div>
+  <div class="category" onclick="showCategoryProducts('belleza')"><img src="imagenes/belleza.png" alt="Belleza"></div>
+  <div class="category" onclick="showCategoryProducts('joyeria')"><img src="imagenes/joyeria.png" alt="Joyeria"></div>
+  <div class="category" onclick="showCategoryProducts('botoms')"><img src="imagenes/botoms.png" alt="Botoms"></div>
+  <div class="category" onclick="showCategoryProducts('hogar')"><img src="imagenes/hogar.png" alt="Hogar"></div>
+</div>
+
+
+<!-- Modal de contacto -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Contáctanos</h2>
+    <p><strong>Teléfono:</strong> +52 4478248898</p>
+    <p><strong>Correo:</strong> nuestratienda@gmail.com</p>
+    <p><strong>Dirección:</strong> caracas,lomas ricas,jilotepec 54240,Mexico</p>
+    <p>¡No dudes en escribirnos si tienes alguna duda o pregunta!</p>
+  </div>
+</div>
+
+
+
+<!-- Modal Login/Register -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLogin">&times;</span>
+    <h2>Iniciar Sesión / Registro</h2>
+    <div class="form-container">
+      <!-- Login Form -->
+      <div id="loginForm">
+        <h3>Iniciar Sesión</h3>
+        <form>
+          <label for="loginEmail">Correo electrónico:</label>
+          <input type="email" id="loginEmail" placeholder="Introduce tu correo" required>
+          <label for="loginPassword">Contraseña:</label>
+          <input type="password" id="loginPassword" placeholder="Introduce tu contraseña" required>
+          <button type="submit">Iniciar sesión</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="javascript:void(0)" id="showRegister">Regístrate aquí</a></p>
+      </div>
+
+      <!-- Register Form -->
+      <div id="registerForm" style="display:none;">
+        <h3>Registro</h3>
+        <form>
+          <label for="registerName">Nombre:</label>
+          <input type="text" id="registerName" placeholder="Introduce tu nombre" required>
+          <label for="registerEmail">Correo electrónico:</label>
+          <input type="email" id="registerEmail" placeholder="Introduce tu correo" required>
+          <label for="registerPassword">Contraseña:</label>
+          <input type="password" id="registerPassword" placeholder="Introduce tu contraseña" required>
+          <button type="submit">Registrar</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="javascript:void(0)" id="showLogin">Inicia sesión aquí</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtener los parámetros de la URL
+  const params = new URLSearchParams(window.location.search);
+  const categoria = params.get("categoria");
+
+  // Elemento donde se mostrarán los productos
+  const productosContainer = document.getElementById("productos-container");
+
+  if (categoria) {
+      document.getElementById("categoria-titulo").textContent = `Categoría: ${categoria.charAt(0).toUpperCase() + categoria.slice(1)}`;
+
+      // Simulación de productos por categoría (puedes reemplazar con datos dinámicos)
+      const productos = {
+          hombres: ["Camiseta Negra", "Pantalón Jeans", "Zapatos Deportivos"],
+          mujeres: ["Top Rojo", "Falda Elegante", "Zapatos de Tacón"],
+          niños: ["Camiseta Infantil", "Pantalón Corto", "Juguete Educativo"],
+          accesorios: ["Bolso de Cuero", "Gafas de Sol", "Sombrero de Playa"]
+      };
+
+      const productosLista = productos[categoria] || ["No hay productos disponibles"];
+
+      productosLista.forEach(producto => {
+          const item = document.createElement("div");
+          item.classList.add("producto");
+          item.textContent = producto;
+          productosContainer.appendChild(item);
+      });
+  }
+});
+
+</script>
+  <script src="script.js"></script>
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2025 Tienda de Ropa. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

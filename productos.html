@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1 id="categoria-titulo">Productos</h1>
+  </header>
+
+  <section id="productos-container" class="productos-container">
+    <!-- Los productos se cargarán aquí dinámicamente -->
+  </section>
+
+  <script>
+    // Base de datos de productos simulada con imágenes
+    const productos = {
+      hombres: [
+        { nombre: "Camiseta", imagen: "imagenes/camisa.png", precio: 100 },
+        { nombre: "Pantalón", imagen: "imagenes/pantalon.png", precio: 150 },
+        { nombre: "Zapatos", imagen: "imagenes/zapatosh.png", precio: 200 }
+      ],
+      mujeres: [
+        { nombre: "Top", imagen: "imagenes/top.png", precio: 120 },
+        { nombre: "Falda", imagen: "imagenes/falda.png", precio: 130 },
+        { nombre: "Zapatos", imagen: "imagenes/zapatom.png", precio: 180 }
+      ],
+      niños: [
+        { nombre: "Camiseta", imagen: "imagenes/nino/camiseta.jpg", precio: 80 },
+        { nombre: "Pantalón", imagen: "imagenes/nino/pantalon.jpg", precio: 90 },
+        { nombre: "Juguetes", imagen: "imagenes/nino/juguetes.jpg", precio: 150 }
+      ],
+      accesorios: [
+        { nombre: "Bolso", imagen: "imagenes/accesorios/bolso.jpg", precio: 250 },
+        { nombre: "Gafas", imagen: "imagenes/accesorios/gafas.jpg", precio: 100 },
+        { nombre: "Sombrero", imagen: "imagenes/accesorios/sombrero.jpg", precio: 120 }
+      ]
+    };
+
+    function obtenerCategoria() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("categoria");
+    }
+
+    function mostrarProductos() {
+      const categoria = obtenerCategoria();
+      const titulo = document.getElementById("categoria-titulo");
+      const contenedor = document.getElementById("productos-container");
+
+      if (categoria && productos[categoria]) {
+        titulo.textContent = `Productos de ${categoria}`;
+        contenedor.innerHTML = productos[categoria].map(prod => `
+          <div class="producto-item">
+            <img src="${prod.imagen}" alt="${prod.nombre}" class="producto-imagen">
+            <h3 class="producto-nombre">${prod.nombre}</h3>
+            <p class="producto-precio">$${prod.precio} MXN</p>
+            <button class="agregar-carrito">Agregar al carrito</button>
+          </div>
+        `).join("");
+      } else {
+        titulo.textContent = "Categoría no encontrada";
+        contenedor.innerHTML = "<p>No hay productos disponibles.</p>";
+      }
+    }
+
+    mostrarProductos();
+  </script>
+
+</body>
+</html>

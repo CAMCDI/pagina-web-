@@ -8,7 +8,7 @@ Este es un proyecto web que incluye una estructura básica de HTML, CSS y JavaSc
 ## Estructura del Proyecto
 
 El proyecto está organizado de la siguiente manera:
-
+```
 /project-root
 │
 ├── /css
@@ -23,7 +23,7 @@ El proyecto está organizado de la siguiente manera:
 ├── index.html            # Página principal
 ├── productos.html        # Página de productos
 └── README.md             # Este archivo
-
+```
 ## Descripción de los Archivos
 
 - **`index.html`**: Página principal del sitio web. Contiene la estructura básica y enlaces a los recursos CSS y JS.
